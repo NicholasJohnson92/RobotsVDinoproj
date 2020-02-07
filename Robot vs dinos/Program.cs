@@ -11,8 +11,11 @@ namespace Robot_vs_dinos
         static void Main(string[] args)
         {
             Weapon weapon = new Weapon();
-
+            Dino dino = new Dino();
             weapon.chooseWeapon();
+            dino.pickaDino();
+
+
 
             Console.ReadLine();
 

@@ -10,14 +10,15 @@ namespace Robot_vs_dinos
     {
 
         //Member Varawbiables
-        List<string> weaponS = new List<string>();
-
-        public string weaponType;
+        List<Weapon> weapons = new List<Weapon>();
+       
+         string weaponType;
 
         public int atkpwr;
         int weaponDrain;
        
-        
+         
+
         
         //Constructor
 
@@ -38,27 +39,27 @@ namespace Robot_vs_dinos
 
         {
             Console.WriteLine(" Please Choose a Weapon (Axe, Sword, Lazer? ) ");
-            weaponType = Console.ReadLine();
+            weaponType = Console.ReadLine().ToLower();
            
             switch (weaponType)
             {
                 case "axe":
-                case "Axe":
+                
                     atkpwr = 120;
                     weaponDrain = 30;
                     Console.WriteLine(" Robot " + " Chose " + weaponType + " with an attack power of " + atkpwr);
                     break;
-                case "Sword":
+                
                 case "sword":
                     atkpwr = 90;
                     weaponDrain = 15;
                     Console.WriteLine(" Robot " + " Chose " + weaponType + " with an attack power of " + atkpwr);
                     break;
                 case "lazer":
-                case "Lazer":
-                case "Laser":
+                
+                
                 case "laser":
-                    atkpwr = 200;
+                    atkpwr = 160;
                     weaponDrain = 70;
                     Console.WriteLine(" Robot " + " Chose " + weaponType + " with an attack power of " + atkpwr);
                     break;

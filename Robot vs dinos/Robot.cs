@@ -11,25 +11,26 @@ namespace Robot_vs_dinos
 
         //Member Varabiables
 
-            
-       public string robotName;
+
+        public string robotName;
         int robotHealth = 100;
 
         int robotpwrLvl = 100;
 
-        
 
-        
-       
-        
-        
-        
-        
+
+
+
+
+
+
+
         //Constructor
 
 
 
-
+        public List<Weapon> weapons = new List<Weapon>();
+        
 
 
 
