@@ -15,7 +15,7 @@ namespace Robot_vs_dinos
         public int dinoattk;
         public int dinoFatigue;
 
-
+        public string dinonm;
 
         //Constructor
 
@@ -35,13 +35,23 @@ namespace Robot_vs_dinos
             switch(dinoSpecies)
             {
                 case "raptor":
-                
 
+                    
                     dinoSpecies = " Velociraptor ";
                     dinoHlth = 85;
                     dinoStam = 150;
                     dinoattk = 50;
-                    dinoFatigue = 25; break;
+                    dinoFatigue = 25;
+                    Console.WriteLine(" You have selected "  + dinoSpecies);
+                    Console.WriteLine( " Health: " + dinoHlth);
+                    Console.WriteLine(" Stamina : " + dinoStam);
+                    Console.WriteLine( " Attack Power: " + dinoattk);
+                    Console.WriteLine(" Attack Cost: " + dinoFatigue);
+                    Console.ReadLine();
+                    Console.WriteLine(" Please choose a name for this Dinosaur  ");
+                    dinonm = Console.ReadLine().ToUpper();
+                    Console.WriteLine(" THis Dinosaur's name is now : " + dinonm);
+                    break;
 
 
                
@@ -53,6 +63,16 @@ namespace Robot_vs_dinos
                     dinoStam = 100;
                     dinoattk = 100;
                     dinoFatigue = 33;
+                    Console.WriteLine(" You have selected " + dinoSpecies);
+                    Console.WriteLine(" Health: " + dinoHlth);
+                    Console.WriteLine(" Stamina : " + dinoStam);
+                    Console.WriteLine(" Attack Power: " + dinoattk);
+                    Console.WriteLine(" Attack Cost: " + dinoFatigue);
+                    
+                    Console.ReadLine();
+                    Console.WriteLine(" Please choose a name for this Dinosaur  ");
+                    dinonm = Console.ReadLine().ToUpper();
+                    Console.WriteLine(" THis Dinosaur's name is now : " + dinonm);
                     break;
                 case "tri-horn":
                
@@ -62,6 +82,15 @@ namespace Robot_vs_dinos
                     dinoStam = 75;
                     dinoattk = 99;
                     dinoFatigue = 35;
+                    Console.WriteLine(" You have selected " + dinoSpecies);
+                    Console.WriteLine(" Health: " + dinoHlth);
+                    Console.WriteLine(" Stamina : " + dinoStam);
+                    Console.WriteLine(" Attack Power: " + dinoattk);
+                    Console.WriteLine(" Attack Cost: " + dinoFatigue);
+                    Console.ReadLine();
+                    Console.WriteLine(" Please choose a name for this Dinosaur  ");
+                    dinonm = Console.ReadLine().ToUpper();
+                    Console.WriteLine(" THis Dinosaur's name is now : " + dinonm);
                     break;
                 default: Console.WriteLine(" Please Choose a Dinosaur from avaible types ( Raptor Tyrannosaur  Trihorn ) ");
 

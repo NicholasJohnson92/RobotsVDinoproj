@@ -11,9 +11,11 @@ namespace Robot_vs_dinos
         static void Main(string[] args)
         {
             Weapon weapon = new Weapon();
-            Dino dino = new Dino();
+            Herd testHerd = new Herd();
             weapon.chooseWeapon();
-            dino.pickaDino();
+
+            
+
 
 
 

@@ -29,7 +29,7 @@ namespace Robot_vs_dinos
 
 
 
-        public List<Weapon> weapons = new List<Weapon>();
+        
         
 
 
