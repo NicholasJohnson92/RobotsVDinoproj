@@ -39,15 +39,15 @@ namespace Robot_vs_dinos
                     
                     dinoSpecies = " Velociraptor ";
                     dinoHlth = 85;
-                    dinoStam = 150;
+                    dinoStam = 100;
                     dinoattk = 50;
-                    dinoFatigue = 25;
+                    dinoFatigue = 15;
                     Console.WriteLine(" You have selected "  + dinoSpecies);
                     Console.WriteLine( " Health: " + dinoHlth);
                     Console.WriteLine(" Stamina : " + dinoStam);
                     Console.WriteLine( " Attack Power: " + dinoattk);
                     Console.WriteLine(" Attack Cost: " + dinoFatigue);
-                    Console.ReadLine();
+                    
                     Console.WriteLine(" Please choose a name for this Dinosaur  ");
                     dinonm = Console.ReadLine().ToUpper();
                     Console.WriteLine(" THis Dinosaur's name is now : " + dinonm);
@@ -69,7 +69,7 @@ namespace Robot_vs_dinos
                     Console.WriteLine(" Attack Power: " + dinoattk);
                     Console.WriteLine(" Attack Cost: " + dinoFatigue);
                     
-                    Console.ReadLine();
+                    
                     Console.WriteLine(" Please choose a name for this Dinosaur  ");
                     dinonm = Console.ReadLine().ToUpper();
                     Console.WriteLine(" THis Dinosaur's name is now : " + dinonm);
@@ -79,15 +79,15 @@ namespace Robot_vs_dinos
                 case "trihorn":
                     dinoSpecies = " Triceratops ";
                     dinoHlth = 325;
-                    dinoStam = 75;
+                    dinoStam = 100;
                     dinoattk = 99;
-                    dinoFatigue = 35;
+                    dinoFatigue =45;
                     Console.WriteLine(" You have selected " + dinoSpecies);
                     Console.WriteLine(" Health: " + dinoHlth);
                     Console.WriteLine(" Stamina : " + dinoStam);
                     Console.WriteLine(" Attack Power: " + dinoattk);
                     Console.WriteLine(" Attack Cost: " + dinoFatigue);
-                    Console.ReadLine();
+                    
                     Console.WriteLine(" Please choose a name for this Dinosaur  ");
                     dinonm = Console.ReadLine().ToUpper();
                     Console.WriteLine(" THis Dinosaur's name is now : " + dinonm);

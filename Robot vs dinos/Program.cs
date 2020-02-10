@@ -10,7 +10,7 @@ namespace Robot_vs_dinos
     {
         static void Main(string[] args)
         {
-            Fleet fleet1 = new Fleet();
+            Battlefield test = new Battlefield();
 
 
 

@@ -11,11 +11,11 @@ namespace Robot_vs_dinos
 
         //Member Varawbiables
         List<Weapon> weapons;
-         string weaponType;
+        public string weaponType;
 
         public int atkpwr;
-        int weaponDrain;
-        string robotName;
+         public int weaponDrain;
+       public string robotName;
 
         //public Robot robot = new Robot();
         
@@ -52,8 +52,8 @@ namespace Robot_vs_dinos
                 
                 
                 case "laser":
-                    atkpwr = 160;
-                    weaponDrain = 50;
+                    atkpwr = 170;
+                    weaponDrain = 40;
                     Console.WriteLine(robotName + " Chose " + weaponType + " with an attack power of " + atkpwr + " and will cost " + weaponDrain + " power to attack ."); break;
                 default:
                     atkpwr = 35;

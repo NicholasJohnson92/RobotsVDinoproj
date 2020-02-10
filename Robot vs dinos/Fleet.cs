@@ -8,9 +8,9 @@ namespace Robot_vs_dinos
 {
     class Fleet
     {   //Member Varabiables
-        Robot robot1 = new Robot();
-        Robot robot2 = new Robot();
-        Robot robot3 = new Robot();
+       public Robot robot1 = new Robot();
+       public Robot robot2 = new Robot();
+       public Robot robot3 = new Robot();
 
         
 

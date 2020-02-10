@@ -13,9 +13,9 @@ namespace Robot_vs_dinos
 
 
         public string robotName;
-        int robotHealth;
+       public int robotHealth;
 
-        int robotpwrLvl;
+       public int robotpwrLvl;
 
 
         public Weapon weapon;
@@ -45,7 +45,7 @@ namespace Robot_vs_dinos
             Console.WriteLine(" The Robot will now be referred to as :" + robotName);
             Console.WriteLine( " The current health of " + robotName + " is " + robotHealth + " and its current power reserve is: " + robotpwrLvl );
             weapon = new Weapon(robotName);
-            Console.ReadLine();
+           
             
         
         
