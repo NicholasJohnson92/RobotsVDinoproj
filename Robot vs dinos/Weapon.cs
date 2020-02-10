@@ -10,33 +10,27 @@ namespace Robot_vs_dinos
     {
 
         //Member Varawbiables
-        List<Weapon> weapons = new List<Weapon>();
-       
+        List<Weapon> weapons;
          string weaponType;
 
         public int atkpwr;
         int weaponDrain;
-       
-         
+        string robotName;
 
+        //public Robot robot = new Robot();
         
         //Constructor
-
-        public Weapon( )
+        public Weapon(string name)
         {
-            
-            
-
-
+            weapons = new List<Weapon>();
+            robotName = name;
+            ChooseWeapon();
         }
 
 
         //Member methods
 
-        public void chooseWeapon()
-
-
-
+        public void ChooseWeapon()
         {
             Console.WriteLine(" Please Choose a Weapon (Axe, Sword, Lazer? ) ");
             weaponType = Console.ReadLine().ToLower();
@@ -45,28 +39,26 @@ namespace Robot_vs_dinos
             {
                 case "axe":
                 
-                    atkpwr = 120;
+                    atkpwr = 96;
                     weaponDrain = 30;
-                    Console.WriteLine(" Robot " + " Chose " + weaponType + " with an attack power of " + atkpwr);
+                    Console.WriteLine(robotName + " Chose " + weaponType + " with an attack power of " + atkpwr + " and will cost " +weaponDrain+ " power to attack ."  );
                     break;
                 
                 case "sword":
-                    atkpwr = 90;
+                    atkpwr = 60;
                     weaponDrain = 15;
-                    Console.WriteLine(" Robot " + " Chose " + weaponType + " with an attack power of " + atkpwr);
-                    break;
+                    Console.WriteLine(robotName + " Chose " + weaponType + " with an attack power of " + atkpwr + " and will cost " + weaponDrain + " power to attack ."); break;
                 case "lazer":
                 
                 
                 case "laser":
                     atkpwr = 160;
-                    weaponDrain = 70;
-                    Console.WriteLine(" Robot " + " Chose " + weaponType + " with an attack power of " + atkpwr);
-                    break;
+                    weaponDrain = 50;
+                    Console.WriteLine(robotName + " Chose " + weaponType + " with an attack power of " + atkpwr + " and will cost " + weaponDrain + " power to attack ."); break;
                 default:
                     atkpwr = 35;
                     weaponDrain = 3;
-                    Console.WriteLine(" Oho!! This Robot chose to forgo weapons in favor of it's fists!! It will strike with a Attack power of " + atkpwr);
+                    Console.WriteLine(" Oho!! " + robotName + " chose to forgo weapons in favor of it's fists!! " +robotName +" will strike with a Attack power of " + atkpwr + " and will cost " + weaponDrain + " power to attack .");
                     break;
             }
             

@@ -10,10 +10,11 @@ namespace Robot_vs_dinos
     {
         static void Main(string[] args)
         {
-            Weapon weapon = new Weapon();
-            Herd testHerd = new Herd();
-            weapon.chooseWeapon();
+            Fleet fleet1 = new Fleet();
 
+
+
+            
             
 
 

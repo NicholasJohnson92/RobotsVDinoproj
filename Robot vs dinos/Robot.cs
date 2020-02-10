@@ -13,30 +13,44 @@ namespace Robot_vs_dinos
 
 
         public string robotName;
-        int robotHealth = 100;
+        int robotHealth;
 
-        int robotpwrLvl = 100;
-
-
+        int robotpwrLvl;
 
 
-
-
-
-
-
+        public Weapon weapon;
         //Constructor
 
+        public Robot() 
+        {
+            robotpwrLvl = 100;
+            robotHealth = 100;
+            
 
 
-        
-        
+
+
+        }
+
+
+
 
 
 
         //Member methods
 
-
+        public void ArmRobot() {
+            Console.WriteLine(" Please Choose an alpha-numeric designation for this Robot ");
+            robotName = Console.ReadLine().ToUpper();
+            Console.WriteLine(" The Robot will now be referred to as :" + robotName);
+            Console.WriteLine( " The current health of " + robotName + " is " + robotHealth + " and its current power reserve is: " + robotpwrLvl );
+            weapon = new Weapon(robotName);
+            Console.ReadLine();
+            
+        
+        
+        
+        }
 
 
 

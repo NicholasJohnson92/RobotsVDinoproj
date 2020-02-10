@@ -10,7 +10,7 @@ namespace Robot_vs_dinos
     {
 
         //Member Varabiables
-
+        public Herd herd = new Herd();
 
 
 
@@ -19,7 +19,20 @@ namespace Robot_vs_dinos
 
         //Member methods
 
+        public void dinoAttack() { 
+           if(herd.dino1.dinoHlth == 0)
+            {
 
+
+
+            }
+
+        
+        
+        
+        
+        
+        }
 
 
 
