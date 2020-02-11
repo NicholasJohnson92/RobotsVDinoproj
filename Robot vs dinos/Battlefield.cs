@@ -39,7 +39,7 @@ namespace Robot_vs_dinos
             robothealthLeft3 = fleet1.robot3.robotHealth;
 
             AttackRun();
-            WinCounter();
+           // WinCounter();
 
 
 
@@ -60,11 +60,24 @@ namespace Robot_vs_dinos
 
 
 
+                    if (herd1.dino1.dinoHlth <= 0 && herd1.dino2.dinoHlth <= 0 && herd1.dino3.dinoHlth <= 0)
+                    {
+                        Console.WriteLine(" Technology has Prevailed agasint the wilderness!! " + fleet1.robot1.robotName + ", " + fleet1.robot2.robotName + ", " + fleet1.robot3.robotName + " are victorious!! ");
+                        Console.ReadLine();
+
+                    }
+                    if (fleet1.robot1.robotHealth <= 0 && fleet1.robot2.robotHealth <= 0 && fleet1.robot3.robotHealth <= 0)
+                    {
+                        Console.WriteLine(" Millions of years of evolution cannot be halted by the paltry efforts of an inferior creator ! " + herd1.dino1.dinonm + ", of the species, " + herd1.dino1.dinoSpecies
+                            + herd1.dino2.dinonm + ", of the species, " + herd1.dino2.dinoSpecies + herd1.dino3.dinonm + ", of the species, " + herd1.dino3.dinoSpecies + "are victorious !! "); Console.ReadLine();
+
+
+                    }
 
                     if (herd1.dino1.dinoHlth > 0 && fleet1.robot1.robotHealth > 0)
                     {
 
-                        Console.WriteLine(" Round one ");
+                       
 
 
                         CommenceAttack1();
@@ -84,8 +97,8 @@ namespace Robot_vs_dinos
                     if (herd1.dino2.dinoHlth > 0 && fleet1.robot2.robotHealth > 0)
                     {
 
-                        Console.WriteLine(" Second Round!! ");
-                        CommenceAttack2();
+                        
+                      CommenceAttack2();
 
 
 
@@ -98,7 +111,7 @@ namespace Robot_vs_dinos
 
                     if (herd1.dino3.dinoHlth > 0 && fleet1.robot3.robotHealth>0)
                     {
-                        Console.WriteLine(" Third Round ");
+                       
                         
                         CommenceAttack3();
 
@@ -136,19 +149,6 @@ namespace Robot_vs_dinos
 
 
 
-            if (healthLeft1 == 0 && healthLeft2 == 0 && healthLeft3 == 0)
-            {
-                Console.WriteLine(" Technology has Prevailed agasint the wilderness!! " + fleet1.robot1.robotName + ", " + fleet1.robot2.robotName + ", " + fleet1.robot3.robotName + " are victorious!! ");
-                Console.ReadLine();
-
-            }
-             if (robothealthLeft1 == 0 && robothealthLeft2 == 0 && robothealthLeft3== 0)
-            {
-                Console.WriteLine(" Millions of years of evolution cannot be halted by the paltry efforts of an inferior creator ! " + herd1.dino1.dinonm + ", of the species, " + herd1.dino1.dinoSpecies
-                    + herd1.dino2.dinonm + ", of the species, " + herd1.dino2.dinoSpecies + herd1.dino3.dinonm + ", of the species, " + herd1.dino3.dinoSpecies + "are victorious !! "); Console.ReadLine();
-
-
-            }
            
 
 
@@ -159,8 +159,9 @@ namespace Robot_vs_dinos
         }
         public void CommenceAttack1()
         {
+            Console.WriteLine(" Round one ");
 
-            if (fleet1.robot1.robotpwrLvl > 0)
+            if (fleet1.robot1.robotpwrLvl > 0 && herd1.dino1.dinoHlth > 0 && fleet1.robot1.robotHealth > 0)
             {
                 herd1.dino1.dinoHlth = herd1.dino1.dinoHlth - fleet1.robot1.weapon.atkpwr;
                 fleet1.robot1.robotpwrLvl = fleet1.robot1.robotpwrLvl - fleet1.robot1.weapon.weaponDrain;
@@ -169,13 +170,13 @@ namespace Robot_vs_dinos
                 Console.WriteLine( fleet1.robot1.robotName+ " attacked " + herd1.dino1.dinoSpecies+" " + herd1.dino1.dinonm);
                 Console.WriteLine(herd1.dino1.dinonm+ " has " + herd1.dino1.dinoHlth + " health left ");
                 if (herd1.dino1.dinoHlth <= 0)
-                { Console.WriteLine(herd1.dino1.dinonm + " has died!! "); winCntrR++; CommenceAttack2(); } 
+                { Console.WriteLine(herd1.dino1.dinonm + " has died!! "); winCntrR++; CommenceAttack2(); }
 
-
-
+                SavageReprisal();
 
                 
-                
+
+
                 Console.ReadLine();
                 
 
@@ -193,7 +194,7 @@ namespace Robot_vs_dinos
             }
 
 
-            SavageReprisal();
+           
 
 
 
@@ -202,9 +203,9 @@ namespace Robot_vs_dinos
         }
         public void CommenceAttack2()
         {
-            
 
-            if (fleet1.robot2.robotpwrLvl > 0)
+            Console.WriteLine(" Second Round!! ");
+            if (fleet1.robot2.robotpwrLvl > 0 && herd1.dino2.dinoHlth > 0 && fleet1.robot2.robotHealth > 0)
             {
                 herd1.dino2.dinoHlth = herd1.dino2.dinoHlth - fleet1.robot2.weapon.atkpwr;
                 fleet1.robot2.robotpwrLvl = fleet1.robot2.robotpwrLvl - fleet1.robot2.weapon.weaponDrain;
@@ -214,12 +215,12 @@ namespace Robot_vs_dinos
                 Console.WriteLine(herd1.dino2.dinonm + " has " + herd1.dino2.dinoHlth + " health left ");
                 if (herd1.dino2.dinoHlth <= 0)
                 { Console.WriteLine(herd1.dino2.dinonm + " has died!! "); winCntrR++;  CommenceAttack3(); }
-                Console.ReadLine();
-                
+                Console.ReadLine(); SavageReprisal2();
+
 
 
             }
-            else
+            else if(herd1.dino2.dinoHlth > 0 && fleet1.robot2.robotHealth > 0)
             {
                 Console.WriteLine(" Power level is " + fleet1.robot2.robotpwrLvl + " The robot ran out of power and must recharge!! ");
                 
@@ -230,12 +231,13 @@ namespace Robot_vs_dinos
 
 
             }
-            SavageReprisal2();
+            
         }
         public void CommenceAttack3()
         {
-            
-            if (fleet1.robot3.robotpwrLvl > 0)
+            Console.WriteLine(" Third Round ");
+
+            if (fleet1.robot3.robotpwrLvl > 0 && herd1.dino3.dinoHlth > 0 && fleet1.robot3.robotHealth > 0)
             {
                 herd1.dino3.dinoHlth = herd1.dino3.dinoHlth - fleet1.robot3.weapon.atkpwr;
                 fleet1.robot3.robotpwrLvl = fleet1.robot3.robotpwrLvl - fleet1.robot3.weapon.weaponDrain;
@@ -244,13 +246,14 @@ namespace Robot_vs_dinos
                 Console.WriteLine(fleet1.robot3.robotName + " attacked " + herd1.dino3.dinoSpecies + " " + herd1.dino3.dinonm);
                 Console.WriteLine(herd1.dino3.dinonm + " has " + herd1.dino3.dinoHlth + " health left ");
                 if (herd1.dino3.dinoHlth <= 0)
-                { Console.WriteLine(herd1.dino3.dinonm + " has died!! "); winCntrR++;  }
+                { Console.WriteLine(herd1.dino3.dinonm + " has died!! "); winCntrR++; WinCounter(); }
                 Console.ReadLine();
-
+                SavageReprisal3();
+                CommenceAttack3();
 
 
             }
-            else
+            else if (herd1.dino3.dinoHlth > 0 && fleet1.robot3.robotHealth > 0)
             {
                 Console.WriteLine(" Power level is " + fleet1.robot3.robotpwrLvl + " The robot ran out of power and must recharge!! ");
                 
@@ -266,7 +269,7 @@ namespace Robot_vs_dinos
         public void SavageReprisal()
         {
 
-            if (herd1.dino1.dinoStam > 0)
+            if (herd1.dino1.dinoStam > 0 && herd1.dino1.dinoHlth > 0 && fleet1.robot1.robotHealth > 0)
             {
                 fleet1.robot1.robotHealth = fleet1.robot1.robotHealth - herd1.dino1.dinoattk;
                 herd1.dino1.dinoStam = herd1.dino1.dinoStam - herd1.dino1.dinoFatigue;
@@ -274,10 +277,10 @@ namespace Robot_vs_dinos
                 Console.WriteLine(fleet1.robot1.robotName + " has " + fleet1.robot1.robotHealth + " health left ");
                 if (fleet1.robot1.robotHealth <= 0) { Console.WriteLine( fleet1.robot1.robotName+ " has ceased functioning "); winCntrd++; CommenceAttack2(); }
                 Console.ReadLine();
-                CommenceAttack1();
-               
-                
 
+
+
+                CommenceAttack1();
 
 
 
@@ -291,7 +294,7 @@ namespace Robot_vs_dinos
 
 
             }
-            else
+            else if (herd1.dino1.dinoHlth > 0 && fleet1.robot1.robotHealth > 0)
             {
                 Console.WriteLine(" Stamina level is " + herd1.dino1.dinoStam + " The Dinosaur is tired and must rest ");
                 
@@ -304,29 +307,30 @@ namespace Robot_vs_dinos
 
 
         public void SavageReprisal2()
-        {
-            if (herd1.dino2.dinoStam > 0)
+        {   
+            if (herd1.dino2.dinoStam > 0 && herd1.dino2.dinoHlth>0 && fleet1.robot2.robotHealth>0)
             {
                 fleet1.robot2.robotHealth = fleet1.robot2.robotHealth - herd1.dino2.dinoattk;
                 herd1.dino2.dinoStam = herd1.dino2.dinoStam - herd1.dino2.dinoFatigue;
                 Console.WriteLine(herd1.dino2.dinoSpecies + " " + herd1.dino2.dinonm + " attacked " + fleet1.robot2.robotName);
-                Console.WriteLine(fleet1.robot2.robotName + " has " + fleet1.robot2.robotHealth + " health left "); 
-                 if (fleet1.robot2.robotHealth <= 0) { Console.WriteLine(fleet1.robot2.robotName + " has ceased functioning "); winCntrd++; CommenceAttack3(); }
-                Console.ReadLine(); CommenceAttack2();
+                Console.WriteLine(fleet1.robot2.robotName + " has " + fleet1.robot2.robotHealth + " health left ");
+                if (fleet1.robot2.robotHealth <= 0) { Console.WriteLine(fleet1.robot2.robotName + " has ceased functioning "); winCntrd++; CommenceAttack3(); }
+                else { CommenceAttack3(); }
+                Console.ReadLine();
 
 
-                
 
 
+                CommenceAttack2();
 
 
 
 
             }
-            else
+            else if(herd1.dino2.dinoHlth > 0 && fleet1.robot2.robotHealth > 0)
             {
                 Console.WriteLine(" Stamina level is " + herd1.dino2.dinoStam + " The Dinosaur is tired and must rest ");
-                CommenceAttack1();
+                CommenceAttack2();
                 Console.ReadLine();
                 herd1.dino2.dinoStam = herd1.dino2.dinoStam + 100;
                 CommenceAttack2();
@@ -340,39 +344,42 @@ namespace Robot_vs_dinos
 
 
 
-            } CommenceAttack3();
+            } 
             
         }
         public void SavageReprisal3()
         {
-            if (herd1.dino3.dinoStam > 0)
+            if (herd1.dino3.dinoStam > 0 && fleet1.robot3.robotHealth > 0)
             {
                 fleet1.robot3.robotHealth = fleet1.robot3.robotHealth - herd1.dino3.dinoattk;
                 herd1.dino3.dinoStam = herd1.dino3.dinoStam - herd1.dino3.dinoFatigue;
                 Console.WriteLine(herd1.dino3.dinoSpecies + " " + herd1.dino3.dinonm + " attacked " + fleet1.robot3.robotName);
                 Console.WriteLine(fleet1.robot3.robotName + " has " + fleet1.robot3.robotHealth + " health left ");
-                if(fleet1.robot3.robotHealth <= 0) { Console.WriteLine(fleet1.robot3.robotName + " has ceased functioning "); winCntrd++;  }
-            
+                if (fleet1.robot3.robotHealth <= 0 || herd1.dino3.dinoHlth <= 0) { Console.WriteLine(fleet1.robot3.robotName + " has ceased functioning "); winCntrd++; WinCounter(); }
+                CommenceAttack3();
+                SavageReprisal3();
+
                 Console.ReadLine();
-                WinCounter();
 
 
 
-                
+
+
 
 
 
 
             }
-            else
+            else if (herd1.dino3.dinoHlth > 0 && fleet1.robot3.robotHealth > 0)
             {
                 Console.WriteLine(" Stamina level is " + herd1.dino3.dinoStam + " The Dinosaur is tired and must rest ");
-                
+
                 Console.ReadLine();
                 herd1.dino3.dinoStam = herd1.dino3.dinoStam + 100;
-                
-                CommenceAttack3(); 
+
+                CommenceAttack3();
             }
+            else { WinCounter(); }
 
             
 
